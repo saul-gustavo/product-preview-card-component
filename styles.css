@@ -24,6 +24,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 14px;
+}
+
 body{
     width: 100%;
     min-height: 100vh;
@@ -33,13 +37,13 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 .main{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 580px;
-    height: 435px;
+    width: 600px;
     background: var(--white);
     border-radius: 8px;
 }
@@ -54,7 +58,6 @@ body{
 
 .title{
     color: var(--dark-garish);
-    font-size: 10px;
     font-family: 'Montserrat', sans-serif;
     margin: 10px 15px;
     font-weight: 700;
@@ -75,7 +78,7 @@ body{
     font-family: 'Fraunces', sans-serif;
     font-weight: 500;
     text-align: left;
-    margin: 20px 20px;
+    margin: 20px;
     font-size: var(--paragraph);
     color: var(--dark-garish);
     line-height: 1.7;
@@ -88,34 +91,32 @@ body{
 .img-perfume{
     object-fit: cover;
     width: 100%;
+    display: block;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
 .values{
     display: flex;
-    position: relative;
 }
 
 .new{
-    font-size: 33px;
     margin: 0 15px;
     color: var(--dark-cyan);
-    font-size: 33px;
+    font-size: 2.4rem;
     font-family: 'Fraunces', sans-serif;
     font-weight: 700;
     padding-inline-start: 15px;
+    display: inline-flex;
+    gap: 10px;
 }
 
 .old{
-    font-size: 14px;
+    font-size: 1rem;
     margin-top: 15px;
     margin-left: 4px;
-    position: absolute;
-    top: -0.37em;
-    right: 5.5em;
+    color: var(--dark-blue);
 }
-
 
 .boton{
     background-color: var(--dark-cyan);
@@ -125,101 +126,94 @@ body{
     padding: 14px 60px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color:var(--cream);
     display: inline-flex;
     align-items: center;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
 }
 
-.boton:hover{
-    cursor: pointer;
+.boton:hover {
+    background-color: hsl(158, 44%, 23%);
+}
+
+.boton:active {
+    background-color: hsl(159, 39%, 51%);
 }
 
 .icono {
     margin-right: 10px;
 }
 
-footer {
-    width: 50%;
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
 }
 
-.attribution { font-size: 11px; text-align: center; font-size: 17px;}
-.attribution a { color: hsl(228, 45%, 44%);}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+}
 
 /* mibile screen */ 
 
-@media screen and (max-width: 475px) {
-
-    .main{
+@media screen and (max-width: 678px) {
+    .main {
         display: flex;
         flex-direction: column;
-        width: 340px;
-        height: 675px;
-        padding: 0px;
-        background: var(--white);
-        border-radius: 10px;
+        width: 100%;
+        max-width: 430px;
     }
 
-    .card-info{
-        margin: 20px;
-    }
 
-    .title{
-        color: var(--dark-garish);
-        font-size: 14px;
-        font-family: 'Montserrat', sans-serif;
-        margin: 5px 20px;
-        padding: 5px;
-    }
-
-    .sub-title{
-        margin: 20px;
-        font-size: 28px;
-        color: var(--dark-blue);
-        font-family: 'Fraunces', serif;
-        font-weight: 800;
-    }
-    
-    .img-perfume{
-        object-fit: cover;
-        height: 270px;
+    .img-perfume {
+        height: 300px;
         width: 100%;
         border-bottom-left-radius: 0px;
         border-top-right-radius: 8px;
-        border-top-left-radius: 8px;
-    }
-    
-    .values{
-        display: flex;
-    }
-    
-    .new{
-        font-size: 33px;
-        margin: 0 15px;
-        color: var(--dark-cyan);
-        font-size: 33px;
-        font-family: 'Fraunces', serif;
-        font-weight: 700;
-    }
-    
-    .old{
-        font-size: 14px;
-        margin-top: 16px;
-        margin-left: 4px;
-        left: 11em;
-    }
-    
-    .boton{
-        background-color: var(--dark-cyan);
-        border-radius: 8px;
-        width: 290px;
-        height: 50px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        color:var(--white);
-        display: block;
     }
 
-    .attribution { font-size: 16px; text-align: center; margin: 10px 10px; }
-    .attribution a { color: hsl(228, 45%, 44%); text-decoration: none;}
-   
+    .card {
+        padding: 10px 20px;
+    }
+
+    .card .contenido {
+        width: 100%;
+    }
+
+    .title {
+        padding: 0;
+        margin: 10px 0px;
+    }
+
+    .sub-title {
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .text {
+        margin: 20px 0px;
+    }
+
+    .values .new{
+        margin-left: 0;
+    }
+
+   .boton {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    padding: 1.3rem;
+   }
+}
+
+@media screen and (max-width: 375px) {
+    .main {
+        max-width: 330px;
+    }
 }
